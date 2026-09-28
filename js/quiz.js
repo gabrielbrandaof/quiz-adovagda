@@ -11,13 +11,15 @@ const Quiz = (() => {
 
   let current = "baby-status";
   let answered = 0;
+  let selectedAnswers = {};
   const total = 6;
-  const letters = ['A', 'B', 'C', 'D'];
+  const letters = ['A', 'B', 'C', 'D', 'E'];
 
   /* ── Inicia o quiz ── */
   function start() {
     current = "baby-status";
     answered = 0;
+    selectedAnswers = {};
     _hide('intro-section');
     _show('quiz-section');
     _render();
@@ -75,6 +77,17 @@ const Quiz = (() => {
     setTimeout(() => {
       answered++;
       const question = QUESTIONS.find(item => item.id === current);
+      selectedAnswers[question.id] = question.options[optionIndex];
+
+      if (
+        selectedAnswers['baby-age'] === "Há mais de 30 dias" &&
+        selectedAnswers.employment === "Nunca trabalhei" &&
+        selectedAnswers.inss === "Nunca contribuí para o INSS"
+      ) {
+        _showResult(true);
+        return;
+      }
+
       current = Array.isArray(question.next)
         ? question.next[optionIndex]
         : question.next;
@@ -88,15 +101,18 @@ const Quiz = (() => {
   }
 
   /* ── Exibe o resultado final ── */
-  function _showResult() {
+  function _showResult(outOfScope = false) {
     // Barra cheia
     document.getElementById('progress-fill').style.width = '100%';
 
     _hide('quiz-section');
     _show('result-section');
+    document.getElementById('eligible-result').style.display = outOfScope ? 'none' : 'block';
+    document.getElementById('out-of-scope-result').style.display = outOfScope ? 'block' : 'none';
+    document.querySelector('.result-badge').textContent = outOfScope ? '♡' : '🎉';
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    _launchConfetti();
+    if (!outOfScope) _launchConfetti();
   }
 
   /* ── Confetti decorativo ── */

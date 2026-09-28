@@ -11,8 +11,9 @@
  *   options: ["Opção A", "Opção B", "Opção C", "Opção D"]
  * }
  *
- * Não importa qual opção o usuário escolher — o resultado final
- * sempre mostrará que ela tem direito ao benefício.
+ * As respostas definem o resultado. Se o bebê nasceu há mais de 30 dias,
+ * a pessoa nunca trabalhou e nunca contribuiu para o INSS, o quiz agradece
+ * a participação e informa o foco atual do atendimento.
  */
 
 const QUESTIONS = [
@@ -42,10 +43,8 @@ const QUESTIONS = [
     category: "Situação do bebê",
     text: "Há quanto tempo o seu bebê nasceu?",
     options: [
-      "Há menos de 3 meses",
-      "Entre 3 e 6 meses",
-      "Entre 6 e 12 meses",
-      "Há mais de 12 meses"
+      "Há até 30 dias",
+      "Há mais de 30 dias"
     ],
     next: "employment"
   },
@@ -57,7 +56,8 @@ const QUESTIONS = [
       "Trabalhava com carteira assinada (CLT)",
       "Era MEI ou autônoma",
       "Estava desempregada",
-      "Trabalhava sem carteira assinada"
+      "Trabalhava sem carteira assinada",
+      "Nunca trabalhei"
     ],
     next: "inss"
   },
@@ -69,7 +69,8 @@ const QUESTIONS = [
       "Sim, pelo emprego com carteira",
       "Sim, contribuía como autônoma",
       "Não contribuía",
-      "Não sei informar"
+      "Não sei informar",
+      "Nunca contribuí para o INSS"
     ],
     next: "benefit"
   },
@@ -88,7 +89,7 @@ const QUESTIONS = [
   {
     id: "impact",
     category: "Seus planos",
-    text: "Se você soubesse hoje que pode receber até R$ 7.000, o que mudaria na sua vida?",
+    text: "Se você soubesse hoje que pode receber até R$ 6.484, o que mudaria na sua vida?",
     options: [
       "Quitaria dívidas e organizaria as contas",
       "Investiria no futuro do meu bebê",

@@ -54,6 +54,21 @@ header {
   border-bottom: 1px solid var(--blush);
 }
 
+.header-brand {
+  position: relative;
+  width: min(280px, 88vw);
+  height: 145px;
+  margin: 0 auto 10px;
+}
+
+.header-brand img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .header-photo {
   position: relative;
   display: grid;
