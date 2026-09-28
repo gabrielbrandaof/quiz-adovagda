@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Você tem direito? · Rafaella Brandão Furtado Chaves</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="top-ribbon"></div>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="header-photo">
+      <span aria-hidden="true">Foto da advogada</span>
+      <img src="img/advogada.jpg" alt="Foto da advogada Rafaella Brandão Furtado Chaves" onerror="this.remove()" />
+    </div>
+    <p class="header-eyebrow">✦ direitos da gestante e da mãe ✦</p>
+    <h1>Você pode ter direito<br>a até <em>R$ 7.000</em></h1>
+    <p class="header-sub">por Rafaella Brandão Furtado Chaves · Advogada</p>
+    <div class="divider">🌸</div>
+  </header>
+
+  <main>
+
+    <!-- TELA INICIAL -->
+    <section id="intro-section" class="card">
+      <span class="card-icon">👶</span>
+      <h2>Descubra se você tem direito ao benefício</h2>
+      <p>Responda algumas perguntas rápidas e veja se você ou alguém que você conhece tem direito a receber até <strong>R$ 7.000</strong> pelo salário-maternidade.</p>
+      <button class="btn-primary" onclick="Quiz.start()">Verificar agora →</button>
+      <div class="quiz-meta">
+        <span>📋 6 perguntas</span>
+        <span>⏱ menos de 2 min</span>
+        <span>🔒 100% gratuito</span>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz-section" style="display:none;">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="q-counter">Pergunta 1 de 6</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="q-category" id="q-category"></p>
+        <h3 class="q-text" id="q-text"></h3>
+        <ul class="options-list" id="options-list"></ul>
+      </div>
+    </section>
+
+    <!-- RESULTADO -->
+    <section id="result-section" style="display:none;">
+      <div class="card result-card">
+        <div class="result-badge">🎉</div>
+        <h2>Parabéns! Você tem direito!</h2>
+        <div class="result-value">Até R$ 7.000</div>
+        <p class="result-sub">com base nas suas respostas</p>
+        <p class="result-msg">
+          De acordo com as informações que você forneceu, você pode ter direito ao <strong>salário-maternidade</strong> e outros benefícios. Fale agora com a Dra. Rafaella para garantir o que é seu por lei, sem pagar nada adiantado.
+        </p>
+
+        <div class="cta-box">
+          <p class="cta-label">Fale agora com a advogada</p>
+          <p class="cta-name">Rafaella Brandão Furtado Chaves</p>
+          <!-- 
+            ===================================================
+            EDITE O NÚMERO DE WHATSAPP ABAIXO:
+            Substitua "5500000000000" pelo seu número real.
+            Formato: 55 + DDD + número (sem espaços ou traços)
+            Exemplo: 5511999999999
+            ===================================================
+          -->
+          <a
+            id="whatsapp-btn"
+            href="https://wa.me/5500000000000?text=Ol%C3%A1%2C+fiz+o+quiz+e+descobri+que+tenho+direito+ao+sal%C3%A1rio-maternidade.+Quero+saber+mais!"
+            target="_blank"
+            class="btn-whatsapp"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.135.562 4.135 1.541 5.87L.057 23.213a.75.75 0 0 0 .906.882l5.605-1.453A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.504-5.234-1.385l-.374-.217-3.878 1.005 1.036-3.769-.237-.389A9.946 9.946 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Falar no WhatsApp agora
+          </a>
+          <p class="cta-disclaimer">Atendimento gratuito · Sem compromisso</p>
+        </div>
+
+        <button class="btn-retry" onclick="Quiz.restart()">← Refazer o quiz</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-name">Rafaella Brandão Furtado Chaves </span>
+    <small>Advogada · OAB/MA nº 18.443</small>
+    <small>© 2026 · Todos os direitos reservados</small>
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+
+</body>
+</html>
